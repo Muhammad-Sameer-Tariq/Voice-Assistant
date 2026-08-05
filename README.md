@@ -64,7 +64,7 @@ Voice-Assistant/
 First, clone the repository:
 
 ```bash
-git clone YOUR_REPOSITORY_URL
+git clone https://github.com/Muhammad-Sameer-Tariq/Voice-Assistant.git
 cd Voice-Assistant
 ```
 
@@ -134,7 +134,6 @@ Exit
 
 ```text
 Open Google
-opn youtube
 
 Search Google for Python tutorials
 
@@ -205,7 +204,7 @@ At the moment, the assistant relies on predefined commands rather than understan
 
 Some things I want to improve in the future are:
 
-* Better voice activity detection
+* Improved voice activity detection
 * Better background noise handling
 * More flexible voice commands
 * Automatic application detection
