@@ -10,6 +10,8 @@ from modules import apps
 from modules import wiki
 import pyttsx3
 import time
+from modules import weather
+from modules import news
 
 def speak(text):
     engine = pyttsx3.init()
@@ -115,3 +117,22 @@ def route(command):
             result = wiki.search_wikipedia(topic)
             print(result)
             speak(result)
+
+    elif "weather in" in command:
+        city = command.split("weather in", 1)[1].strip()
+
+        if city:
+            result = weather.get_weather(city)
+            print(result)
+            speak(result)
+
+    elif "latest news" in command or command == "news":
+        speak("Getting the latest news")
+        headlines = news.get_news()
+        if isinstance(headlines, list):
+            for i, headline in enumerate(headlines, 1):
+                print(f"{i}. {headline}")
+                speak(headline)
+        else:
+            print(headlines)
+            speak(headlines)

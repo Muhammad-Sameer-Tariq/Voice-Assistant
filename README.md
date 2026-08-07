@@ -1,3 +1,8 @@
+Here is the updated version with **Weather** and **News** added everywhere they should be mentioned. I also updated the project structure and technologies to include `weather.py` and `news.py`.
+
+Copy-paste this directly into your `README.md`:
+
+````markdown
 # Voice Assistant
 
 Voice Assistant is a Python-based project that I developed as a beginner to practice voice recognition, AI integration, and computer automation.
@@ -8,35 +13,40 @@ Through this project, I learned how Python libraries, APIs, speech recognition, 
 
 ## Features
 
-* Voice recognition using Faster-Whisper
-* Text-to-speech using pyttsx3
-* Wake word activation using "Jarvis"
-* Open websites
-* Search Google
-* Search YouTube
-* Tell the current time and date
-* Check battery percentage
-* Increase and decrease system volume
-* Shut down, restart, and put the computer to sleep
-* Play a random local music file
-* Ask questions using Gemini AI
-* Open desktop applications
-* Search Wikipedia and provide summaries
-* Deactivate the assistant using voice commands
-* VAD filtering with Faster-Whisper
+- Voice recognition using Faster-Whisper
+- Text-to-speech using pyttsx3
+- Wake word activation using "Jarvis"
+- Open websites
+- Search Google
+- Search YouTube
+- Tell the current time and date
+- Check battery percentage
+- Check weather information
+- Get latest news headlines
+- Increase and decrease system volume
+- Shut down, restart, and put the computer to sleep
+- Play a random local music file
+- Ask questions using Gemini AI
+- Open desktop applications
+- Search Wikipedia and provide summaries
+- Deactivate the assistant using voice commands
+- VAD filtering with Faster-Whisper
 
 ## Technologies Used
 
-* Python
-* Faster-Whisper
-* SoundDevice
-* SciPy
-* pyttsx3
-* PyCaw
-* psutil
-* Google Gemini API
-* python-dotenv
-* Wikipedia
+- Python
+- Faster-Whisper
+- SoundDevice
+- SciPy
+- pyttsx3
+- PyCaw
+- psutil
+- Google Gemini API
+- Weather API
+- News API
+- python-dotenv
+- Wikipedia
+- Requests
 
 ## Project Structure
 
@@ -56,8 +66,10 @@ Voice-Assistant/
     ├── apps.py
     ├── music.py
     ├── volume_control.py
-    └── wiki.py
-```
+    ├── wiki.py
+    ├── weather.py
+    └── news.py
+````
 
 ## Installation
 
@@ -86,14 +98,16 @@ Install the required libraries:
 pip install -r requirements.txt
 ```
 
-## Gemini API Setup
+## API Setup
 
-The AI feature uses the Gemini API.
+The project uses APIs for Gemini AI, weather information, and news.
 
-Create a `.env` file in the project folder and add:
+Create a `.env` file in the project folder and add your API keys:
 
 ```text
-GEMINI_API_KEY=your_api_key_here
+GEMINI_API_KEY=your_gemini_api_key
+WEATHER_API_KEY=your_weather_api_key
+NEWS_API_KEY=your_news_api_key
 ```
 
 Do not upload the `.env` file to GitHub.
@@ -145,6 +159,14 @@ Tell me the date
 
 Tell me battery percentage
 
+What's the weather in Islamabad?
+
+Tell me the weather in Peshawar
+
+Give me the latest news
+
+News
+
 Increase volume
 
 Decrease volume
@@ -167,6 +189,39 @@ Sleep PC
 
 Deactivate
 ```
+
+## Weather
+
+The weather feature uses a weather API to get current weather information for a city.
+
+It can provide information such as:
+
+* Temperature
+* Feels-like temperature
+* Weather description
+* Humidity
+
+For example:
+
+```text
+What's the weather in Islamabad?
+```
+
+The weather API key is stored in the `.env` file.
+
+## News
+
+The news feature uses a news API to get recent news headlines.
+
+The assistant currently gets five headlines related to Pakistan and can display and read them using text-to-speech.
+
+For example:
+
+```text
+Latest news
+```
+
+The news API key is stored in the `.env` file.
 
 ## Local Music
 
@@ -194,7 +249,7 @@ Some desktop application paths need to be configured manually.
 
 The local music folder path also needs to be configured manually.
 
-The Gemini AI feature requires an internet connection and an API key.
+The Gemini AI, weather, and news features require an internet connection and their respective API keys.
 
 The Faster-Whisper model can take some time to load when running on a CPU.
 
@@ -241,3 +296,6 @@ I am a beginner Python developer, and I created this project to gain practical e
 My goal was to learn how Python, APIs, speech recognition, AI, and computer automation can be used together in one project.
 
 This is a learning project, not a professional-level virtual assistant. It represents what I have learned so far and gives me a foundation to build more advanced projects in the future.
+
+```
+```
