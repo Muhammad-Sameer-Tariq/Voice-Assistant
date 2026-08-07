@@ -1,19 +1,16 @@
-Voice Assistant
+# Voice Assistant
 
-Voice Assistant is a Python-based desktop assistant that I built as a learning project.
+Voice Assistant is a Python-based desktop assistant that I built as a beginner project.
 
 The main idea was to create an assistant that can listen to my voice, understand commands, and perform different tasks on my computer. I also added Gemini AI, weather, and news features so it can do more than just handle basic computer commands.
 
-This project started as a simple voice assistant, but while building it I learned about speech recognition, APIs, Python modules, automation, system control, and working with different libraries together.
+While building this project, I learned about speech recognition, APIs, Python modules, automation, system control, and how different Python libraries can work together.
 
+## Features
 
-Features
-
-Currently, Voice Assistant can:
-
-- Recognize voice commands using Faster-Whisper
-- Respond using pyttsx3
-- Activate using the wake word "Jarvis"
+- Voice recognition using Faster-Whisper
+- Text-to-speech using pyttsx3
+- Wake word activation using "Jarvis"
 - Open websites
 - Search Google
 - Search YouTube
@@ -21,7 +18,7 @@ Currently, Voice Assistant can:
 - Tell the current date
 - Check battery percentage
 - Get current weather information
-- Get the latest news headlines
+- Get latest news headlines
 - Increase and decrease system volume
 - Shut down the computer
 - Restart the computer
@@ -29,187 +26,172 @@ Currently, Voice Assistant can:
 - Play a random song from a local music folder
 - Ask questions using Gemini AI
 - Open desktop applications
-- Search Wikipedia and give short summaries
+- Search Wikipedia and get short summaries
 - Deactivate the assistant using voice commands
-- Use Faster-Whisper VAD to help filter non-speech audio
+- VAD filtering with Faster-Whisper
 
+## Technologies and Libraries
 
-Technologies and Libraries
+- Python
+- Faster-Whisper
+- SoundDevice
+- SciPy
+- pyttsx3
+- PyCaw
+- psutil
+- Google GenAI
+- python-dotenv
+- Requests
+- Wikipedia
+- Weather API
+- News API
+- webbrowser
+- os
 
-I used Python and the following libraries:
+## Project Structure
 
-- Faster-Whisper - Speech recognition
-- SoundDevice - Recording audio from the microphone
-- SciPy - Saving recorded audio
-- pyttsx3 - Text-to-speech
-- PyCaw - Controlling Windows system volume
-- psutil - Getting battery information
-- Google GenAI - Gemini AI integration
-- python-dotenv - Loading API keys from environment variables
-- Requests - Making API requests
-- Wikipedia - Getting Wikipedia summaries
-- Weather API - Getting weather information
-- News API - Getting news headlines
-- webbrowser - Opening websites
-- os - Working with files and Windows system commands
+    Voice-Assistant/
+    │
+    ├── main.py
+    ├── commands.py
+    ├── requirements.txt
+    ├── README.md
+    ├── .gitignore
+    │
+    └── modules/
+        ├── __init__.py
+        ├── sites.py
+        ├── ai.py
+        ├── apps.py
+        ├── music.py
+        ├── volume_control.py
+        ├── wiki.py
+        ├── weather.py
+        └── news.py
 
+## Installation
 
-Project Structure
+### 1. Clone the repository
 
-Voice-Assistant/
-│
-├── main.py
-├── commands.py
-├── requirements.txt
-├── README.md
-├── .gitignore
-│
-└── modules/
-    ├── __init__.py
-    ├── sites.py
-    ├── ai.py
-    ├── apps.py
-    ├── music.py
-    ├── volume_control.py
-    ├── wiki.py
-    ├── weather.py
-    └── news.py
+    git clone https://github.com/Muhammad-Sameer-Tariq/Voice-Assistant.git
+    cd Voice-Assistant
 
+### 2. Create a virtual environment
 
-Installation
+    python -m venv .venv
 
-1. Clone the repository
-
-git clone https://github.com/Muhammad-Sameer-Tariq/Voice-Assistant.git
-
-cd Voice-Assistant
-
-
-2. Create a virtual environment
-
-I recommend using a virtual environment so the project dependencies stay separate from other Python projects.
-
-python -m venv .venv
-
-
-3. Activate the virtual environment
+### 3. Activate the virtual environment
 
 On Windows:
 
-.venv\Scripts\activate
+    .venv\Scripts\activate
 
+### 4. Install the required libraries
 
-4. Install the required libraries
+    pip install -r requirements.txt
 
-pip install -r requirements.txt
+## API Setup
 
+This project uses APIs for Gemini AI, weather information, and news.
 
-API Setup
+Create a file named .env in the main project folder.
 
-Voice Assistant uses APIs for Gemini AI, weather information, and news.
+Add your API keys like this:
 
-Create a .env file in the main project folder and add:
+    GEMINI_API_KEY=your_gemini_api_key
+    WEATHER_API_KEY=your_weather_api_key
+    NEWS_API_KEY=your_news_api_key
 
-GEMINI_API_KEY=your_gemini_api_key
-WEATHER_API_KEY=your_weather_api_key
-NEWS_API_KEY=your_news_api_key
+Do not upload the .env file to GitHub.
 
-The .env file should not be uploaded to GitHub.
+Make sure .env is included in your .gitignore file.
 
-Make sure .env is included in .gitignore.
+## Running the Project
 
+After installing the required libraries and setting up the API keys, run:
 
-Running the Project
+    python main.py
 
-After installing everything, run:
+The Faster-Whisper model will load first.
 
-python main.py
-
-The Faster-Whisper model will load first. After it loads, Voice Assistant will start listening for the wake word.
+After the model has loaded, the assistant will start listening for the wake word.
 
 Say:
 
-Jarvis
+    Jarvis
 
-After activation, you can give it commands.
+After activation, you can give the assistant commands.
 
-To deactivate it, say:
+To deactivate the assistant, say:
 
-Deactivate
+    Deactivate
 
 or:
 
-Exit
+    Exit
 
+## Example Commands
 
-Example Commands
+    Open Google
 
-Some commands you can try:
+    Search Google for Python tutorials
 
-Jarvis
+    Search YouTube for Python projects
 
-Open Google
+    What's the time?
 
-Search Google for Python tutorials
+    Tell me the date
 
-Search YouTube for Python projects
+    Tell me battery percentage
 
-What's the time?
+    What's the weather in Islamabad?
 
-Tell me the date
+    What's the weather in Peshawar?
 
-Tell me battery percentage
+    Give me the latest news
 
-What's the weather in Islamabad?
+    News
 
-What's the weather in Peshawar?
+    Increase volume
 
-Give me the latest news
+    Decrease volume
 
-News
+    Play music
 
-Increase volume
+    Ask AI what is Python?
 
-Decrease volume
+    Open Chrome
 
-Play music
+    Open VS Code
 
-Ask AI what is Python?
+    Wiki Albert Einstein
 
-Open Chrome
+    Shutdown PC
 
-Open VS Code
+    Restart PC
 
-Wiki Albert Einstein
+    Sleep PC
 
-Shutdown PC
+    Deactivate
 
-Restart PC
-
-Sleep PC
-
-Deactivate
-
-
-Weather
+## Weather Feature
 
 The weather feature uses a weather API to get current weather information for a city.
 
-It can provide information such as:
+It can provide:
 
 - Temperature
 - Feels-like temperature
 - Weather description
 - Humidity
 
-For example:
+Example:
 
-What's the weather in Islamabad?
+    What's the weather in Islamabad?
 
 The weather API key is stored in the .env file.
 
-
-News
+## News Feature
 
 The news feature uses a news API to get recent news headlines.
 
@@ -217,69 +199,75 @@ Currently, it gets five news headlines related to Pakistan.
 
 The headlines can be displayed in the terminal and read aloud by the assistant using text-to-speech.
 
-For example:
+Example:
 
-Give me the latest news
+    Give me the latest news
 
 or:
 
-News
+    News
 
 The news API key is stored in the .env file.
 
+## Gemini AI Feature
 
-Local Music
+The Gemini AI feature allows the assistant to answer questions that are not handled by the predefined commands.
 
-The music feature currently plays a random audio file from a local music folder.
+Example:
+
+    Ask AI what is Python?
+
+The Gemini API key is stored in the .env file and should never be uploaded to GitHub.
+
+## Local Music
+
+The music feature plays a random audio file from a local music folder.
 
 The folder path is configured inside modules/music.py.
 
 For example:
 
-music_folder = r"D:\Music"
+    music_folder = r"D:\Music"
 
-You should change this path to your own music folder.
+Change this path to the location of your own music folder.
 
-Because this path is specific to my computer, the music feature will need to be configured if someone else wants to use the project.
+Because this path is specific to my computer, this feature needs to be configured if someone else wants to use the project.
 
+## Current Limitations
 
-Current Limitations
+This is still a beginner learning project, so it has some limitations.
 
-This project is still a learning project, so it has some limitations.
-
-- It is currently designed mainly for Windows.
-- The microphone recording uses a fixed recording duration.
-- Voice recognition accuracy can be affected by background noise and microphone quality.
-- Some desktop application paths are manually configured.
+- It is mainly designed for Windows.
+- The microphone uses a fixed recording duration.
+- Background noise and microphone quality can affect speech recognition.
+- Some desktop application paths need to be configured manually.
 - The local music folder path needs to be configured manually.
 - Gemini AI, weather, and news features require an internet connection and valid API keys.
-- The Faster-Whisper model can take some time to load, especially on a CPU.
-- The assistant currently understands a predefined set of commands rather than every possible way of saying something.
+- Faster-Whisper can take some time to load, especially when running on a CPU.
+- The assistant currently relies on predefined commands rather than understanding every possible way of saying a command.
 
-
-Future Improvements
+## Future Improvements
 
 Some things I may improve in future versions:
 
-- Better microphone-level voice activity detection
+- Better voice activity detection
 - Better background noise handling
-- More flexible natural-language commands
-- Automatic application detection instead of hardcoded paths
+- More flexible voice commands
+- Automatic application detection
 - Reminder and to-do functionality
 - Better error handling
-- More languages and better multilingual recognition
+- More language support
 - GUI for the assistant
 - More computer automation features
 
-
-What I Learned
+## What I Learned
 
 This project helped me understand how different parts of a Python application can work together.
 
 While making it, I practiced:
 
 - Python functions and modules
-- Importing and organizing code
+- Organizing code into different files
 - Working with APIs
 - Using environment variables
 - Speech recognition
@@ -292,15 +280,14 @@ While making it, I practiced:
 - Exception handling
 - Using third-party Python libraries
 - Git and GitHub
-- Debugging real problems instead of only following tutorials
+- Debugging
 
-One of the biggest things I learned from this project was that making something work is only one part of programming. Debugging and figuring out why something is not working took a significant part of the project.
+One of the biggest things I learned from this project is that making a program work is only one part of programming. A lot of time is also spent finding bugs and understanding why something is not working.
 
+## About the Project
 
-About the Project
+I am a beginner Python developer, and I built this project to gain practical experience with Python.
 
-This is one of my Python projects while learning programming and building my skills in automation, APIs, AI integration, and software development.
+My goal was to learn how Python, APIs, speech recognition, AI, and computer automation can be used together in one project.
 
-I built this project mainly to learn by actually making something instead of only following Python tutorials.
-
-More improvements will probably come as I learn more.
+This is a learning project, not a professional-level virtual assistant. It represents what I have learned so far and gives me a foundation to build more advanced projects in the future.
